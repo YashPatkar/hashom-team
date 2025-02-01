@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'course',
     'rest_framework',
     'corsheaders',
+    'api',
 ]
 
 CORS_ALLOW_CREDENTIALS = True

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Jura', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .typing-effect {
+            font-size: 2em;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.15em solid white; /* Cursor effect */
+            animation: typing 4s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 40em; } /* Adjust based on text length */
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+        .content {
+            margin-top: 20px;
+            max-width: 600px;
+        }
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+        button{
+            color: white;
+            border-radius: 20%;
+            background-color: #75d719;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> </head>
+</head>
+<body>
+
+    <h3 style="color: #75d719;">Demo Completed: What Just Happened?</h3> <h1>Password - {{password}}  email - {{email}}</h1>
+    <div class="content">
+        <p>
+            Congratulations! You've just completed a demo showing how phishing attacks work in the real world. Let’s break down what happened.
+        </p>
+        <p>
+            When you entered your username and password on the login page, this information was captured by a fake, but convincing, website. In reality, these types of phishing pages are designed to look identical to the legitimate TCS portal (or any trusted website), tricking you into revealing your sensitive information.
+        </p>
+        <p>
+            <strong>How to Stay Protected</strong><br>
+            This demo is just one example of how attackers can create realistic-looking fake websites to steal your credentials. To stay secure, it’s essential to learn more about phishing attacks, both theoretically and practically.
+        </p>
+        <p>
+            We encourage you to explore our website, Hashom, to deepen your understanding of phishing attacks and how to defend against them. On Hashom, you will:
+        </p>
+        <ul>
+            <li>Learn about the latest phishing tactics in use today</li>
+            <li>Get hands-on training with real-world phishing simulations</li>
+            <li>Stay updated on current phishing trends and how to avoid them</li>
+        </ul>
+        <p>
+            <strong>Learn More at Hashom:</strong>
+            <br>
+            <button onclick="reactgo()">Hashom</button>
+        </p>
+    </div>
+
+    <script>
+        // Stop the blinking cursor after typing effect is done
+        const typingEffect = document.querySelector('.typing-effect');
+        typingEffect.addEventListener('animationend', () => {
+            typingEffect.style.borderRight = 'none'; // Remove the blinking cursor
+        });
+
+        function reactgo(){
+            const hashomButton = document.querySelector('button'); // Select the button
+        hashomButton.addEventListener('click', () => {
+            // Redirect using window.location.href (simpler for this case)
+            window.location.href = 'http://localhost:5173'; // Or your React app's URL
+        })
+        }
+    </script>
+
+</body>
+</html>

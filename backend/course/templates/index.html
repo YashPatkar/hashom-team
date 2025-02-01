@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en"
+    data-textdirection="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="csrf-token" content="Vu9Negiof1dLK7jrUSCh55zeaIrLH3zfCse3kELz">
+
+    <title>Login Page - TCS Employee Portal</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://portal.tcservices.com/images/logo/favicon.ico">
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600">
+        <link rel="stylesheet" href="https://portal.tcservices.com/vendors/css/vendors.min.css?id=fe3f3cee0c6b478231e7">
+        <link rel="stylesheet" href="https://portal.tcservices.com/vendors/css/ui/prism.min.css?id=7e4946c3180addae176b">
+        
+                
+        <link rel="stylesheet" href="https://portal.tcservices.com/css/bootstrap.css?id=8ab6c8f75395e29d620e">
+        <link rel="stylesheet" href="https://portal.tcservices.com/css/bootstrap-extended.css?id=ffe42096f0c8e750724a">
+        <link rel="stylesheet" href="https://portal.tcservices.com/css/colors.css?id=94cbbdc888463989a40d">
+        <link rel="stylesheet" href="https://portal.tcservices.com/css/components.css?id=b78a0cbbb94c662b3a46">
+        <link rel="stylesheet" href="https://portal.tcservices.com/css/themes/dark-layout.css?id=23dadee17eb18769209e">
+        <link rel="stylesheet" href="https://portal.tcservices.com/css/themes/semi-dark-layout.css?id=21b58ff97915d94c91b0">
+
+
+
+
+
+
+        <link rel="stylesheet" href="https://portal.tcservices.com/css/core/menu/menu-types/vertical-menu.css?id=ba8df5767a5568849685">
+        <link rel="stylesheet" href="https://portal.tcservices.com/css/core/colors/palette-gradient.css?id=52fc5050d0e016e92dab">
+
+         
+
+<link rel="stylesheet" href="https://portal.tcservices.com/css/pages/authentication.css?id=904fd5f21d839cb97660">
+
+        <link rel="stylesheet" href="https://portal.tcservices.com/css/custom-laravel.css?id=8466bba382e9394e3509">
+
+
+</head>
+
+
+
+<body
+    class="vertical-layout vertical-menu-modern 1-column blank-page bg-full-screen-image  footer-static"
+    data-menu="vertical-menu-modern" data-col="1-column">
+
+    <!-- BEGIN: Header-->
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-wrapper">
+
+            <div class="content-body">
+                
+                <section class="row flexbox-container">
+  <div class="col-xl-8 col-11 d-flex justify-content-center">
+    <div class="card bg-authentication rounded-0 mb-0">
+      <div class="row m-0">
+        <div class="col-lg-6 d-lg-block d-none text-center align-self-center px-1 py-0">
+          <img src="https://portal.tcservices.com/images/pages/login.png" alt="branding logo">
+        </div>
+        <div class="col-lg-6 col-12 p-0">
+          <div class="card rounded-0 mb-0 px-2">
+            <div class="card-header pb-1">
+              <div class="card-title">
+                <h4 class="mb-0">Login</h4>
+              </div>
+            </div>
+            <p class="px-2">Welcome back, please login to your account.</p>
+
+            <div class="card-content">
+              <div class="card-body pt-1">
+                <form method="POST" action="{% url 'tcspage' %}">
+                  {% csrf_token %}
+                  <input type="hidden" name="_token" value="Vu9Negiof1dLK7jrUSCh55zeaIrLH3zfCse3kELz">                  <fieldset class="form-label-group form-group position-relative has-icon-left">
+
+                    <input id="email" type="email" class="form-control "
+                      name="email" placeholder="E-Mail Address" value="" required autocomplete="email"
+                      autofocus>
+
+                    <div class="form-control-position">
+                      <i class="feather icon-user"></i>
+                    </div>
+                    <label for="email">E-Mail Address</label>
+                                      </fieldset>
+
+                  <fieldset class="form-label-group position-relative has-icon-left">
+                    
+                    <input id="password" type="password" class="form-control "
+                      name="password" placeholder="Password" required autocomplete="current-password">
+
+                    <div class="form-control-position">
+                      <i class="feather icon-lock"></i>
+                    </div>
+                    <label for="password">Password</label>
+                                      </fieldset>
+                  <div class="form-group d-flex justify-content-between align-items-center">
+                    <div class="text-left">
+                      <fieldset class="checkbox">
+                        <div class="vs-checkbox-con vs-checkbox-primary">
+                          <input type="checkbox" name="remember" id="remember" >
+                          <span class="vs-checkbox">
+                            <span class="vs-checkbox--check">
+                              <i class="vs-icon feather icon-check"></i>
+                            </span>
+                          </span>
+                          <span class="">Remember me</span>
+                        </div>
+                      </fieldset>
+                    </div>
+                    
+                  </div>
+                  <button type="submit" class="btn btn-primary float-right btn-inline">Login</button>
+                </form>
+              </div>
+            </div>
+            <div class="login-footer">
+              <div class="divider">
+                <br>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+            </div>
+        </div>
+    </div>
+    <!-- End: Content-->
+
+    
+    <script src="https://portal.tcservices.com/vendors/js/vendors.min.js?id=ce302e5ffbc1c5f16354"></script>
+        <script src="https://portal.tcservices.com/vendors/js/ui/prism.min.js?id=091d2c0f82e928c5efa5"></script>
+                
+        <script src="https://portal.tcservices.com/js/core/app-menu.js?id=0d6f4af48465ef7d995b"></script>
+        <script src="https://portal.tcservices.com/js/core/app.js?id=521b4daece7c16bb78cf"></script>
+        <script src="https://portal.tcservices.com/js/scripts/components.js?id=2728d7b385e441e9aee6"></script>
+        
+        
+</body>
+
+</html>

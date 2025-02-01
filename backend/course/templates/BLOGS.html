@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: #75d719;
+            font-family: 'Jura', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .home-button {
+            background-color: #75d719;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 16px;
+            background-color: rgba(117, 211, 25, 0.1); /* Set background color of search bar */
+            color: white; /* Set text color of search bar */
+        }
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .blog {
+            border: 1px solid #75d719;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            background-color: rgba(117, 211, 25, 0.1);
+            flex: 0 0 calc(33.333% - 20px); /* 3 blogs per row */
+            box-sizing: border-box;
+            color: white; /* Change text color in blog container to white */
+        }
+        h2 {
+            margin: 0;
+        }
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Blog Entries</h1>
+    <button class="home-button" onclick="window.location.href='http://localhost:5173/'">Home</button>
+</div>
+
+<div class="search-container">
+    <input type="text" class="search-bar" placeholder="Search blogs...">
+</div>
+
+<div class="blog-container">
+    
+    {% if blogs %}    
+        {% for blog in blogs %}
+        <div class="blog">
+            <h2>{{ blog.name }} at {{ blog.company }}</h2>
+            <p><strong>Attack Type:</strong> {{ blog.phishing }}</p>
+            <p>{{ blog.message }}</p>
+        </div>
+    {% empty %}
+        <p>No blog entries available.</p>
+    {% endfor %}
+    {% endif %}
+        
+    <div class="blog">
+        <h2>yash at google</h2>
+        <p><strong>Attack Type:</strong>Email Phishing</p>
+        <p>This is an demo attack</p>
+    </div>
+    
+    <div class="blog">
+        <h2>Bob Smith at Cyber Solutions</h2>
+        <p><strong>Attack Type:</strong> Ransomware</p>
+        <p>An analysis of recent ransomware attacks.</p>
+    </div>
+    <div class="blog">
+        <h2>Charlie Brown at Secure Corp</h2>
+        <p><strong>Attack Type:</strong> DDoS</p>
+        <p>Best practices for securing your network.</p>
+    </div>
+    <div class="blog">
+        <h2>Diana Prince at Data Protectors</h2>
+        <p><strong>Attack Type:</strong> Data Breach</p>
+        <p>How to respond to a data breach.</p>
+    </div>
+    <div class="blog">
+        <h2>Ethan Hunt at Spyware Solutions</h2>
+        <p><strong>Attack Type:</strong> Spyware</p>
+        <p>Understanding spyware and its impact.</p>
+    </div>
+</div>
+
+</body>
+</html>

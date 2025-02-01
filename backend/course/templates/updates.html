@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update's Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: #75d719;
+            font-family: 'Jura', sans-serif; /* Use Jura font */
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .home-button {
+            background-color: #75d719;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 16px;
+            background-color: rgba(117, 211, 25, 0.1); /* Set background color of search bar */
+            color: black; /* Set text color of search bar */
+        }
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .blog {
+            border: 1px solid #75d719;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            background-color: rgba(117, 211, 25, 0.1);
+            flex: 0 0 calc(33.333% - 20px); /* 3 blogs per row */
+            box-sizing: border-box;
+            color: white; /* Change text color in blog container to white */
+        }
+        h2 {
+            margin: 0;
+        }
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Latest Updates
+    </h1>
+    <button class="home-button" onclick="window.location.href='http://localhost:5173/'">Home</button>
+</div>
+
+<div class="search-container">
+    <input type="text" class="search-bar" placeholder="Search updates...">
+</div>
+
+<div class="blog-container">
+    <div class="blog">
+        <h2>XSS vulnerabilities lead to account hijacks</h2>
+        <br>
+        <p><strong>Reference:</strong>https://portswigger.net/daily-swig/xss-vulnerabilities-in-google-cloud-google-play-could-lead-to-account-hijacks</p>
+        <br><p>A pair of XSS vulnerabilities were found in Google Cloud, Google Play, and DevSite, potentially allowing attackers to hijack accounts. The first was a reflected XSS bug on Google DevSite, where an attacker-controlled link could execute JavaScript on Google’s sites, bypassing security. The second was a DOM-based XSS vulnerability on Google Play, where attackers could manipulate the search page to execute malicious JavaScript and hijack accounts. The researcher, ‘NDevTK’, earned $3,133.70 for the DevSite bug and $5,000 for the Google Play vulnerability.</p>
+    </div><div class="blog">
+        <h2>Command injection vulnerability in GitHub Pages</h2>
+        <br>
+        <p><strong>Reference:</strong>https://portswigger.net/daily-swig/command-injection-vulnerability-in-github-pages-nets-bug-hunter-4k</p>
+        <br><p>A security researcher, Joren Vrancken, discovered a vulnerability in GitHub Pages that allowed attackers to execute arbitrary code through the service’s build process. GitHub Pages, which uses Jekyll to build static websites, had an issue where an attacker could exploit the Theme Chooser functionality to run malicious code. By crafting a malicious URL and tricking an admin into interacting with it, the attacker could trigger a payload during the build process, potentially exposing private repositories.
+
+            Vrancken reported the issue to GitHub, which promptly resolved it by removing the Theme Chooser feature. In recognition of his findings, Vrancken received a $4,000 bug bounty and a GitHub Pro subscription. He praised GitHub's bug bounty program, which he said combined traditional hacking techniques with GitHub-specific features. GitHub's security team commended Vrancken's work, highlighting the value of engaging with security researchers through the program.</p>
+    </div>
+    <div class="blog">
+        <h2>Microsoft Edge deepens defenses against malicious websites</h2>
+        <br>
+        <p><strong>Reference:</strong>https://portswigger.net/daily-swig/microsoft-edge-deepens-defenses-against-malicious-websites-with-enhanced-security-mode</p>
+        <br><p>Microsoft has introduced an **Enhanced Security Mode** in Edge to protect users from potential threats when visiting unfamiliar websites. This feature disables certain security features, like JIT JavaScript compilation, and adds additional protections such as arbitrary code guards. It offers three settings: **Basic**, which adds security to less-visited sites; **Balanced**, which adapts based on user behavior; and **Strict**, which applies protections to all sites but may disrupt normal browsing. The feature is off by default, and users can add trusted sites to an exception list. It was introduced in Edge version 104. However, it doesn’t support WebAssembly (WASM) sites, which can be exempted.</p>
+    </div>
+    <div class="blog">
+        <h2>Toyata seals Backdoor</h2>
+        <br>
+        <p><strong>Reference:</strong>https://portswigger.net/daily-swig/toyota-sealed-up-a-backdoor-to-its-global-supplier-management-network</p>
+        <br><p>A security researcher, Eaton Zveare, discovered a major vulnerability in Toyota's Global Supplier Preparation Information Management System (GSPIMS), which manages sensitive data for around 3,000 suppliers and 14,000 users. Zveare exploited a backdoor in the system's login mechanism to gain system administrator access. This allowed him to view and potentially modify supplier information, rankings, and sensitive employee comments, with the ability to delete, leak, or tamper with data. 
+
+            The vulnerability stemmed from issues in Toyota's Angular-based web application, allowing unauthorized access by manipulating JavaScript code and exploiting the "createJWT" API. Zveare reported the flaw to Toyota in November 2022, and the company promptly fixed it by blocking the exploit. While Toyota acted quickly, Zveare noted that a bounty reward would have been appreciated to further encourage security research.</p>
+    </div>
+</div>
+
+</body>
+</html>

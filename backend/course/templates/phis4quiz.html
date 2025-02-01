@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Ways to Prevent Phishing Scams Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Jura', sans-serif;
+            background-color: black;
+            color: #75d719;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: black;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin: 0;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .submit-btn {
+            background-color: #75d719;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>10 Ways to Prevent Phishing Scams Quiz</h1>
+            <p>Test your knowledge about preventing phishing scams!</p>
+        </header>
+
+        <form id="quizForm">
+            <div class="question">
+                <h3>1. What is the most effective way to stay informed about new phishing techniques?</h3>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="a"> Ignoring emails from unknown senders.</li>
+                    <li><input type="radio" name="q1" value="b"> Subscribing to cybersecurity newsletters and updates.</li>
+                    <li><input type="radio" name="q1" value="c"> Relying on friends to inform you.</li>
+                    <li><input type="radio" name="q1" value="d"> Only checking news once a year.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <h3>2. When should you be cautious about clicking links in emails?</h3>
+                <ul class="options">
+                    <li><input type="radio" name="q2" value="a"> When the email is from a known contact.</li>
+                    <li><input type="radio" name="q2" value="b"> When the email contains urgent language.</li>
+                    <li><input type="radio" name="q2" value="c"> When the email is from a company you trust.</li>
+                    <li><input type="radio" name="q2" value="d"> You should never be cautious.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <h3>3. What should you do if you receive a pop-up asking for personal information?</h3>
+                <ul class="options">
+                    <li><input type="radio" name="q3" value="a"> Click the "cancel" button.</li>
+                    <li><input type="radio" name="q3" value="b"> Close the browser tab immediately.</li>
+                    <li><input type="radio" name="q3" value="c"> Enter the information to see what happens.</li>
+                    <li><input type="radio" name="q3" value="d"> Take a screenshot and share it on social media.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <h3>4. How can you verify a website's security before entering sensitive information?</h3>
+                <ul class="options">
+                    <li><input type="radio" name="q4" value="a"> Look for "http" in the URL.</li>
+                    <li><input type="radio" name="q4" value="b"> Check for "https" and a padlock icon in the address bar.</li>
+                    <li><input type="radio" name="q4" value="c"> Trust any website that looks professional.</li>
+                    <li><input type="radio" name="q4" value="d"> Only enter information on websites you have used before.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <h3>5. What is the purpose of using an anti-phishing toolbar?</h3>
+                <ul class="options">
+                    <li><input type="radio" name="q5" value="a"> To block all pop-ups.</li>
+                    <li><input type="radio" name="q5" value="b"> To alert you when you visit a known phishing site.</li>
+                    <li><input type="radio" name="q5" value="c"> To enhance your browsing speed.</li>
+                    <li><input type="radio" name="q5" value="d"> To automatically fill in forms.</li>
+                </ul>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="checkAnswers()">Submit</button>
+        </form>
+
+        <div id="result" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b',
+                q4: 'b',
+                q5: 'b'
+            };
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            for (let question in answers) {
+                const selected = form[question].value;
+                if (selected === answers[question]) {
+                    score++;
+                }
+            }
+            document.getElementById('result').innerText = `You scored ${score} out of ${Object.keys(answers).length}.`;
+        }
+    </script>
+</body>
+</html>

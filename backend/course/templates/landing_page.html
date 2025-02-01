@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCS Employee Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: #75d719;
+            font-family: 'Jura', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .typing-effect {
+            font-size: 2em;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.15em solid white; /* Cursor effect */
+            animation: typing 4s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 30em; } /* Adjust based on text length */
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+        .content {
+            margin-top: 20px;
+            max-width: 600px;
+        }
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+        #maine {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="typing-effect">Imagine you are a TCS employee....</div>
+    <div class="content">
+        <p><h3 id="maine">Imagine you are an employee at TCS, and an urgent situation has arisen within the company. You’ve just received a notification that requires immediate attention. It’s critical that you check the “Messages and Updates” section on the company’s portal as soon as possible to stay informed and take necessary actions. Please log in urgently through the referral link below to ensure you're up-to-date on the latest developments.</h3></p>
+        <p>
+           TCS's portal : <a href="{% url 'tcspage' %}" target="_blank">https://portal.tcservices.com/Login</a>.
+        </p>
+    </div>
+
+    <script>
+        // Stop the blinking cursor after typing effect is done
+        const typingEffect = document.querySelector('.typing-effect');
+        typingEffect.addEventListener('animationend', () => {
+            typingEffect.style.borderRight = 'none'; // Remove the blinking cursor
+        });
+    </script>
+
+</body>
+</html>
